@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoTravel Ticket Booking</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lavender;
+        }
+
+        header {
+            background-color: purple;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 35px;
+        }
+
+        nav {
+            background-color: coral;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        .banner {
+            background-color: pink;
+            color: purple;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        .banner h2 {
+            font-size: 30px;
+        }
+
+        .container {
+            background-color: white;
+            margin: 25px auto;
+            padding: 25px;
+            width: 85%;
+            border-radius: 15px;
+        }
+
+        h2 {
+            color: purple;
+        }
+
+        .travel-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .bus {
+            background-color: lightyellow;
+        }
+
+        .train {
+            background-color: lightcyan;
+        }
+
+        .holiday {
+            background-color: mistyrose;
+        }
+
+        .option h3 {
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid silver;
+            border-radius: 7px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: purple;
+            color: white;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkmagenta;
+        }
+
+        .search-button {
+            background-color: coral;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background-color: purple;
+            color: white;
+        }
+
+        th, td {
+            padding: 14px;
+            border: 1px solid silver;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: lavender;
+        }
+
+        .fare {
+            color: green;
+            font-weight: bold;
+        }
+
+        .seat-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .seat {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 35px;
+        }
+
+        .free {
+            background-color: lightgreen;
+        }
+
+        .taken {
+            background-color: lightcoral;
+        }
+
+        .chosen {
+            background-color: gold;
+        }
+
+        .legend {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: purple;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .container {
+                width: 85%;
+            }
+
+            .travel-options {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>✈ GOTRAVEL</h1>
+    <p>Your Trip, Your Choice, Your Happiness!</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#book">Book Tickets</a>
+    <a href="#services">Services</a>
+    <a href="#prices">Ticket Prices</a>
+    <a href="#seats">Seats</a>
+</nav>
+
+<section class="banner" id="home">
+    <h2>Explore The World With Us!</h2>
+    <p>🚌 Book Buses | 🚆 Book Trains | 🌍 Enjoy Travelling</p>
+    <p>Easy Booking - Comfortable Journey - Happy Memories</p>
+</section>
+
+<div class="container" id="services">
+    <h2>Our Travel Services</h2>
+
+    <div class="travel-options">
+
+        <div class="option bus">
+            <h3>🚌 Bus Tickets</h3>
+            <p>AC and Non-AC buses</p>
+            <p>Affordable fares</p>
+            <button type="button"
+            onclick="document.getElementById('book').scrollIntoView()">
+            Book Bus</button>
+        </div>
+
+        <div class="option train">
+            <h3>🚆 Train Tickets</h3>
+            <p>Express and Superfast trains</p>
+            <p>Comfortable journeys</p>
+            <button type="button"
+            onclick="document.getElementById('book').scrollIntoView()">
+            Book Train</button>
+        </div>
+
+        <div class="option holiday">
+            <h3>🎒 Holiday Trips</h3>
+            <p>Plan your next adventure</p>
+            <p>Travel with family and friends</p>
+            <button type="button"
+            onclick="document.getElementById('book').scrollIntoView()">
+            Plan Trip</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="container" id="book">
+    <h2>🎫 Find Your Journey</h2>
+    <p>Enter your travel details below.</p>
+
+    <form action="#results" method="get">
+
+        <label>Travel By</label>
+        <select name="type" required>
+            <option value="">Choose Bus or Train</option>
+            <option value="Bus">Bus</option>
+            <option value="Train">Train</option>
+        </select>
+
+        <label>From City</label>
+        <input type="text" name="source"
+        placeholder="Enter starting city" required>
+
+        <label>To City</label>
+        <input type="text" name="destination"
+        placeholder="Enter destination city" required>
+
+        <label>Journey Date</label>
+        <input type="date" name="date" required>
+
+        <label>Passenger Name</label>
+        <input type="text" name="passenger"
+        placeholder="Enter full name" required>
+
+        <label>Passenger Age</label>
+        <input type="number" name="age"
+        min="1" max="120" placeholder="Enter age" required>
+
+        <label>Number of Passengers</label>
+        <select name="passengers">
+            <option>1 Passenger</option>
+            <option>2 Passengers</option>
+            <option>3 Passengers</option>
+            <option>4 Passengers</option>
+            <option>5 Passengers</option>
+        </select>
+
+        <label>Travel Class</label>
+        <select name="class">
+            <option>General / Ordinary</option>
+            <option>Sleeper</option>
+            <option>AC</option>
+            <option>First Class</option>
+        </select>
+
+        <button class="search-button" type="submit">
+            🔍 Search My Journey
+        </button>
+
+    </form>
+</div>
+
+<div class="container" id="results">
+    <h2>⭐ Popular Travel Routes</h2>
+
+    <table id="prices">
+        <tr>
+            <th>Travel Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Sample Fare</th>
+        </tr>
+
+        <tr>
+            <td>🚌 Bus</td>
+            <td>Visakhapatnam</td>
+            <td>Vijayawada</td>
+            <td class="fare">₹500</td>
+        </tr>
+
+        <tr>
+            <td>🚌 Bus</td>
+            <td>Vijayawada</td>
+            <td>Hyderabad</td>
+            <td class="fare">₹700</td>
+        </tr>
+
+        <tr>
+            <td>🚆 Train</td>
+            <td>Visakhapatnam</td>
+            <td>Chennai</td>
+            <td class="fare">₹400</td>
+        </tr>
+
+        <tr>
+            <td>🚆 Train</td>
+            <td>Vijayawada</td>
+            <td>Bengaluru</td>
+            <td class="fare">₹600</td>
+        </tr>
+    </table>
+
+    <p><b>Note:</b> These fares are examples for a student project.
+    They are not live ticket prices.</p>
+</div>
+
+<div class="container" id="seats">
+    <h2>💺 Choose Your Seat</h2>
+
+    <p>Select a seat in this sample layout.</p>
+
+    <div class="legend">
+        <span class="seat free">Available</span>
+        <span class="seat taken">Booked</span>
+        <span class="seat chosen">Selected</span>
+    </div>
+
+    <div class="seat-box">
+        <span class="seat free">A1</span>
+        <span class="seat free">A2</span>
+        <span class="seat taken">A3</span>
+        <span class="seat free">A4</span>
+        <span class="seat free">B1</span>
+        <span class="seat taken">B2</span>
+        <span class="seat free">B3</span>
+        <span class="seat free">B4</span>
+        <span class="seat chosen">C1</span>
+        <span class="seat free">C2</span>
+        <span class="seat free">C3</span>
+        <span class="seat taken">C4</span>
+    </div>
+
+    <p>Green = Available | Red = Booked | Yellow = Selected</p>
+</div>
+
+<footer>
+    <h2>GOTRAVEL</h2>
+    <p>Making Every Journey Special!</p>
+    <p>Contact: gotravel@example.com</p>
+    <p>© 2026 GoTravel. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
